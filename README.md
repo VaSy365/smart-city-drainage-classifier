@@ -46,4 +46,4 @@ Pasang library: pip install -r requirements.txt.
 Buka Notebook di Google Colab dan pastikan dataset ZIP sudah terhubung dari Drive.
 Jalankan cell Inference untuk menguji deteksi kondisi infrastruktur secara real-time.
 
-Dibuat oleh Diva Syabina Putri - Mahasiswi Sistem Informasi Universitas Raharja (Class of 2023).
+Dibuat oleh Diva Syabina Putri.
