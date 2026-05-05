@@ -1,38 +1,49 @@
-# Sistem Cerdas Tata Kota: Klasifikasi Citra Drainase dan Kondisi Jalan untuk Mitigasi Banjir
+Sistem Cerdas Tata Kota: Klasifikasi Citra Drainase dan Kondisi Jalan untuk Mitigasi Banjir
 
-## 🌟 Deskripsi Proyek
-Proyek ini dikembangkan oleh **Diva Syabina Putri** sebagai solusi berbasis *Artificial Intelligence* (AI) untuk memantau infrastruktur tata kota secara cerdas. Fokus utama model ini adalah melakukan klasifikasi otomatis terhadap kondisi saluran air dan jalan raya guna mendukung sistem peringatan dini banjir (*Early Warning System*) berbasis IoT.
+🌟 Deskripsi Proyek
+Proyek ini dikembangkan oleh Diva Syabina Putri sebagai solusi berbasis Artificial Intelligence (AI) untuk pemantauan infrastruktur tata kota. Model ini dirancang untuk mendeteksi potensi penyumbatan saluran air dan genangan secara otomatis guna mendukung sistem mitigasi banjir yang cerdas.
 
-Eksplorasi teknologi ini dilakukan secara elegan menggunakan arsitektur **Convolutional Neural Network (CNN)** untuk mengenali potensi penyumbatan saluran akibat sampah serta deteksi genangan air secara real-time.
+Eksplorasi ini menggunakan arsitektur Convolutional Neural Network (CNN) yang telah dioptimalkan dengan Batch Normalization untuk mengenali pola kompleks pada citra drainase.
 
-## 📊 Analisis Performa Model
-Model dilatih menggunakan dataset gambar infrastruktur perkotaan (Banjir, Normal, dan Tersumbat) dengan hasil evaluasi sebagai berikut:
-- **Akurasi Pelatihan (Training Accuracy)**: 95.38%
-- **Akurasi Validasi (Validation Accuracy)**: 98.12%
-- **Loss**: 0.08
+📊 Analisis Performa Model (Revisi Terbaru)
+Berdasarkan revisi kriteria terbaru, model telah melalui pengujian ketat pada data yang belum pernah dilihat sebelumnya (unseen data):
 
-Model berhasil mencapai target akurasi di atas 85% dan menunjukkan kurva pembelajaran yang stabil tanpa indikasi overfitting yang signifikan.
+Total Dataset: 3475 citra.
 
-## 🛠️ Teknologi & Library
-Proyek ini dibangun menggunakan ekosistem Python dan TensorFlow:
-- **Bahasa**: Python 3
-- **Framework**: TensorFlow & Keras
-- **Optimization**: Adam Optimizer
-- **Deployment Formats**: SavedModel, TF-Lite, & TFJS
+Pembagian Data (Physical Split): Data dibagi secara fisik menjadi folder Train (80%), Validation (10%), dan Test (10%) untuk menjamin objektivitas evaluasi.
 
-## 📂 Struktur Berkas Submission
-Berikut adalah susunan berkas yang disertakan dalam proyek ini:
-- `saved_model/`: Model dalam format standar TensorFlow.
-- `tflite/`: Model yang dioptimalkan untuk perangkat mobile dan embedded.
-- `tfjs_model/`: Model untuk deployment pada aplikasi berbasis web.
-- `notebook.ipynb`: Berkas Jupyter Notebook yang berisi alur lengkap dari Data Loading hingga Inference.
-- `requirements.txt`: Daftar dependensi library yang digunakan.
+Akurasi Testing Akhir: 86.78%.
 
-## 🚀 Cara Penggunaan
-1. Pastikan library yang dibutuhkan telah terpasang:
-   `pip install -r requirements.txt`
-2. Jalankan berkas `notebook.ipynb` di Google Colab menggunakan runtime **T4 GPU** untuk performa optimal.
-3. Gunakan bagian **Inference** di akhir notebook untuk menguji model dengan gambar baru secara interaktif.
+Karakteristik Model: Menunjukkan kurva pembelajaran yang sehat (nanjak) dengan stabilitas tinggi pada klasifikasi objek sulit seperti sampah/sumbatan.
 
----
-*Dibuat untuk memenuhi kriteria submission kelas Machine Learning - Dicoding Indonesia.*
+🛠️ Teknologi & Library
+Proyek ini dibangun menggunakan ekosistem Python dan TensorFlow terbaru:
+
+Bahasa: Python 3.12+
+
+Library Utama: TensorFlow, Keras, Split-Folders, Matplotlib
+
+Optimization: Adam Optimizer dengan Learning Rate Scheduling
+
+Deployment Formats: SavedModel (Keras v3 Export), TF-Lite, & TFJS
+
+📂 Struktur Berkas Submission
+Berkas ini telah disusun ulang agar sesuai dengan standar revisi:
+
+saved_model/: Model dalam format SavedModel terbaru (hasil model.export).
+
+tfjs_model/: Model untuk deployment pada aplikasi berbasis web.
+
+model.tflite: Model yang dioptimalkan untuk perangkat mobile dan embedded.
+
+Submission_Akhir_Diva.ipynb: Notebook lengkap dengan grafik performa dan evaluasi testing murni.
+
+requirements.txt: Daftar dependensi library terbaru.
+
+🚀 Cara Penggunaan
+Pasang library: pip install -r requirements.txt.
+
+Buka Notebook di Google Colab dan pastikan dataset ZIP sudah terhubung dari Drive.
+Jalankan cell Inference untuk menguji deteksi kondisi infrastruktur secara real-time.
+
+Dibuat oleh Diva Syabina Putri - Mahasiswi Sistem Informasi Universitas Raharja (Class of 2023).
