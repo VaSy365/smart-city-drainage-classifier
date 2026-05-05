@@ -1,5 +1,5 @@
-tensorflow
+tensorflow==2.15.0
 tensorflowjs
-numpy
+split-folders
 matplotlib
-pillow
+numpy
